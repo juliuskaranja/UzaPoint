@@ -14,22 +14,77 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
+      <h1 class="title">Menu</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
+        <ion-item class="item item-avatar-left" menu-close ng-click="login()">
+            <img src="img/profile.jpg">
+            <h2>{{name}}</h2>
+            <p>{{email}}</p>
+
         </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Search
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Home
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Sales
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Inventory
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Payment
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Procurement
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Ordering
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Accounting
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; CRM
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Business Intelligent
+        </ion-item>
+
+        <ion-item menu-close style="padding-bottom: 45px">
+          <i class="icon ion-home"></i>&nbsp; &nbsp; HR
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Support
+        </ion-item>
+
+        <ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Setting
+        </ion-item>
+
+        <ion-item menu-close ng-click="logout()">
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Logout
+        </ion-item>
+
+        <!--<ion-item menu-close>
+          <i class="icon ion-home"></i>&nbsp; &nbsp; Ordering
         </ion-item>
         <ion-item menu-close href="#/app/browse">
           Browse
         </ion-item>
         <ion-item menu-close href="#/app/playlists">
           Playlists
-        </ion-item>
+        </ion-item>-->
       </ion-list>
     </ion-content>
   </ion-side-menu>

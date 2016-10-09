@@ -46,6 +46,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'loginController'
       })
 
+    //the template /abstract to extend..
+      .state('app', {
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+        controller: 'AppCtrl'
+      })
+
+    //the main menu..
+      .state('app.mainMenu', {
+        url: '/mainMenu',
+        views: {
+          'menuContent': {
+            templateUrl:'templates/mainMenu.html',
+            controller:'mainMenuController'
+          }
+        }
+      })
 
 
 
@@ -58,12 +76,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 
 
-    .state('app', {
+
+    /*.state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
-  })
+  })*/
 
   .state('app.search', {
     url: '/search',
