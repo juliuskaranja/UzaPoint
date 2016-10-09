@@ -1,0 +1,57 @@
+<style>
+    .back{
+        background: url(../www/img/login.png) no-repeat center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        text-align: center;
+    }
+    .item{
+        background-color: transparent;
+    }
+    .myForm{
+        margin: 30px;
+        padding-top: 35px;
+    }
+</style>
+
+<ion-content class="back">
+    <div style="padding-top: 200px">
+        <h2 style="color: white">TRY FREE TRIAL</h2>
+
+
+        <!--login form-->
+        <div style="padding-top: 50px">
+            <form ng-submit="login(loginData)" class="myForm">
+
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Username</span>
+                        <input type="text">
+                    </label>
+
+                    <label class="item item-input">
+                        <span class="input-label">Username</span>
+                        <input type="text">
+                    </label>
+
+                    <label class="item item-input">
+                        <span class="input-label">Username</span>
+                        <input type="text">
+                    </label>
+
+                    <label class="item item-input">
+                        <span class="input-label">Password</span>
+                        <input type="password">
+                    </label>
+
+                <label class="item item-input">
+                        <button class="button button-positive button-block">Try Free Trial</button>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</ion-content>

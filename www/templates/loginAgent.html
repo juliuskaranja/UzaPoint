@@ -1,0 +1,42 @@
+<style>
+    .back{
+        background: url(../www/img/login.png) no-repeat center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        text-align: center;
+    }
+    .item{
+        background-color: transparent;
+    }
+    .myForm{
+        margin: 30px;
+        padding-top: 35px;
+    }
+</style>
+
+<ion-content class="back">
+    <div style="padding-top: 200px">
+        <h2 style="color: white">Welcome Back</h2>
+
+
+        <!--login form-->
+        <div style="padding-top: 50px">
+            <form ng-submit="login(loginData)" class="myForm">
+
+                    <label class="item item-input">
+                        <input type="email" ng-model="loginData.username" placeholder="Username">
+                    </label>
+                    <label class="item item-input">
+                        <input type="password" ng-model="loginData.password" placeholder="Password">
+                    </label>
+                    <label class="item item-input">
+                        <button type="submit" class="button button-default button-block">SIGN IN</button>
+                    </label>
+
+            </form>
+        </div>
+    </div>
+
+
+</ion-content>
