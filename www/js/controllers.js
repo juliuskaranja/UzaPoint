@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
     })
 
 
-.controller('loginController', function ($scope,$state,$http) {
+.controller('loginController', function ($scope,$state,$http,toastr) {
      $scope.login = function (loginData) {
        console.info(loginData);
          //send an ajax request
@@ -27,19 +27,20 @@ angular.module('starter.controllers', [])
                  sessionStorage.setItem('user_id',response.user.id);
                  sessionStorage.setItem('name',response.user.name);
                  sessionStorage.setItem('email',response.user.email);
+                 toastr.success('Successfully logged In');
                  $state.go('app.mainMenu');
              }
              else{
-
+                toastr.error(response.message,response.status);
              }
          }).error(function (err) {
-
+             toastr.error('Check your internet connection and retry');
          })
      }
     })
 
     //controller for the main menu template abstract.
-    .controller('AppCtrl', function ($scope,$state,$ionicHistory) {
+    .controller('AppCtrl', function ($scope,$state,$ionicHistory,toastr) {
         $scope.name = sessionStorage.name;
         $scope.email = sessionStorage.email;
 
@@ -49,12 +50,35 @@ angular.module('starter.controllers', [])
             sessionStorage.clear();
             //clear the ionic history
             $ionicHistory.clearHistory();
+            toastr.success('Successfully signed out');
             $state.go('login')
         }
     })
 
     //the main menu controller
     .controller('mainMenuController', function ($scope) {
+    })
+
+
+    //the sign up controller
+    .controller('signUpController', function ($scope,$http,$state,toastr) {
+        $scope.signUpMethod = function (signUpData) {
+            $http({
+                url:url+'signUpRetailer',
+                method:'POST',
+                data:signUpData,
+                headers:{ 'Content-Type': 'application/x-www-form-urlencoded'}
+            }).success(function (response) {
+                if(response.status == 'success'){
+                    $state.go('login');
+                    toastr.success('successfully created a retailer account');
+                }else{
+                    toastr.error(response.error)
+                }
+            }).error(function (error) {
+                console.error(error)
+            })
+        };
     })
 
 

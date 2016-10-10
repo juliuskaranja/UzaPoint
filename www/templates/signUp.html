@@ -22,31 +22,31 @@
 
         <!--login form-->
         <div style="padding-top: 50px">
-            <form ng-submit="login(loginData)" class="myForm">
+            <form ng-submit="signUpMethod(signUp)" class="myForm">
 
                 <div class="list">
                     <label class="item item-input">
-                        <span class="input-label">Username</span>
-                        <input type="text">
+                        <span class="input-label">First Name</span>
+                        <input type="text" ng-model="signUp.first_name">
                     </label>
 
                     <label class="item item-input">
-                        <span class="input-label">Username</span>
-                        <input type="text">
+                        <span class="input-label">Last Name</span>
+                        <input type="text" ng-model="signUp.last_name">
                     </label>
 
                     <label class="item item-input">
-                        <span class="input-label">Username</span>
-                        <input type="text">
+                        <span class="input-label">Email</span>
+                        <input type="email" ng-model="signUp.email">
                     </label>
 
                     <label class="item item-input">
-                        <span class="input-label">Password</span>
-                        <input type="password">
+                        <span class="input-label">Phone Number</span>
+                        <input type="number" ng-model="signUp.phone_number">
                     </label>
 
                 <label class="item item-input">
-                        <button class="button button-positive button-block">Try Free Trial</button>
+                        <button type="submit" class="button button-positive button-block">Try Free Trial</button>
                     </label>
                 </div>
             </form>
